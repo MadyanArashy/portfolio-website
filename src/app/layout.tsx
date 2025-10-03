@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -18,17 +18,16 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://madyan.online"),
   title: {
     default: "Madyan Arashy",
-    template: "%s | Madyan Arashy"
+    template: "%s | Madyan Arashy",
   },
-  description: "Portfolio showcasing my projects, skills, and experience as a web developer.",
-  other: {
-    keywords: "portfolio, web developer, react, nextjs",
-    author: "Madyan Arashy",
-    robots: "index, follow",
-    "theme-color": "#0D1117"
-  },
+  description:
+    "Portfolio showcasing my projects, skills, and experience as a web developer.",
+  keywords: ["portfolio", "web developer", "react", "nextjs"],
+  authors: [{ name: "Madyan Arashy" }],
+  robots: "index, follow",
   openGraph: {
     title: "Madyan Arashy | Web Developer",
     description: "Explore my portfolio projects and skills.",
@@ -36,15 +35,19 @@ export const metadata: Metadata = {
     siteName: "Madyan’s Portfolio",
     images: [
       {
-        url: "/og-image.png",  // should be 1200x630px
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Portfolio preview image"
-      }
+        alt: "Portfolio preview image",
+      },
     ],
     locale: "en_US",
     type: "website",
-  }
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0D1117",
 };
 
 export default function RootLayout({

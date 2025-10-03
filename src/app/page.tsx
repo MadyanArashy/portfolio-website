@@ -1,9 +1,19 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/partials/Hero";
+import About from "@/partials/About";
+import HighlightedProjects from "@/partials/HighlightedProjects";
+import HighlightedCerts from "@/partials/HighlightedCerts";
+import CallToAction from "@/partials/CallToAction";
 
 export default function Home() {
   return (
-    <div className="font-display grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <p>Hello World!</p>
-    </div>
+    <main className="min-h-screen w-full bg-[var(--color-primary)] text-[var(--color-text-primary)]">
+      <Navbar />
+      <Hero />
+      <About />
+      <HighlightedProjects />
+      <HighlightedCerts />
+      <CallToAction />
+    </main>
   );
 }
