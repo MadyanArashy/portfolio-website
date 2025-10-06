@@ -10,6 +10,7 @@ const geistMono = Geist_Mono({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 })
 
 const spaceGrotesk = Space_Grotesk({
@@ -57,6 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </head>
       <body
         className={`${inter.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}
       >

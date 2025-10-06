@@ -8,7 +8,7 @@ export default function About() {
           both on the frontend and the backend of the stack. I specialize in backend development with PHP, Express.js, and MySQL,
           while creating user-friendly UIs with Laravel Blade, Next.js, and a bit of Expo React Native.
           I’m always eager to learn and I’m always{" "}
-          <a href="#cta" className="text-[var(--color-accent-primary)] underline">open to connect</a>.
+          <a href="#cta" className="link underline">open to connect</a>.
         </p>
       </div>
     </section>

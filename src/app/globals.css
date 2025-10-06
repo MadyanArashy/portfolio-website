@@ -21,12 +21,25 @@
 }
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-display: var(--font-space-grotesk)
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+  --color-hover-bg: var(--color-hover-bg);
+  --color-error: var(--color-error);
+  --color-accent-primary: var(--color-accent-primary);
+  --color-accent-secondary: var(--color-accent-secondary);
+
+  /* Fonts */
+  --font-display: var(--font-space-grotesk);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
+
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -35,8 +48,53 @@
   }
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base - Inter font and primary text color */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+}
+
+/* Headings - Display font (Space Grotesk) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+}
+
+/* Body text - Inter font with secondary color */
+p, blockquote, li, small, figcaption, label, span {
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+}
+
+/* Form elements - Inter font */
+button, input, textarea, select {
+  font-family: var(--font-sans);
+}
+
+/* Code elements - Mono font (Geist Mono) */
+code, pre, kbd, samp, var {
+  font-family: var(--font-mono);
+}
+
+/* Table elements - Inter font with secondary color */
+td, th {
+  font-family: var(--font-sans);
+  color: var(--color-text-secondary);
+}
+
+/* Links inherit color but use Inter font */
+a {
+  font-family: var(--font-sans);
+}
+
+a.link {
+  color: var(--color-accent-primary) !important;
+}
+
+a.link:hover {
+  color: var(--color-accent-secondary) !important;
 }
