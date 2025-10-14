@@ -1,19 +1,21 @@
 import Card from "@/components/Card";
 import Link from "next/link";
+import { projects } from "@/data";
 
 export default function HighlightedProjects() {
+  const highlights = projects.slice(0, 3);
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold mb-12 text-center">Highlighted Projects</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((id) => (
+          {highlights.map((item) => (
             <Card
-              key={id}
-              href={`/projects/${id}`}
-              title={`Project ${id}`}
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              placeholder="Screenshot"
+              key={item.id}
+              href={`/projects/${item.id}`}
+              title={item.title}
+              description={item.summary}
+              imgUrl={item.thumbnailPath}
             />
           ))}
         </div>

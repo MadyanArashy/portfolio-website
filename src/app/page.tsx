@@ -7,8 +7,7 @@ import CallToAction from "@/partials/CallToAction";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full bg-[var(--color-primary)] text-[var(--color-text-primary)]">
-      <Navbar />
+    <main className="min-h-screen w-full">
       <Hero />
       <About />
       <HighlightedProjects />

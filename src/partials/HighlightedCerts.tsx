@@ -10,12 +10,12 @@ export default function HighlightedCerts() {
           <Card
             title="TOEIC"
             description="Lorem ipsum dolor sit amet."
-            placeholder="Certificate"
+            imgUrl="/images/TOEIC-madyan-arashy.jpg"
           />
           <Card
             title="Programming Certificate"
             description="Lorem ipsum dolor sit amet."
-            placeholder="Certificate"
+            
           />
         </div>
         <div className="text-center mt-10">
