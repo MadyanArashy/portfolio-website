@@ -40,55 +40,49 @@
   --font-mono: var(--font-geist-mono);
 }
 
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  /* Base - Inter font and primary text color */
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
   }
-} */
+
+  /* Headings - Display font (Space Grotesk) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-text-primary);
+  }
+
+  /* Body text - Inter font with secondary color */
+  p, blockquote, li, small, figcaption, label, span {
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+  }
+
+  /* Form elements - Inter font */
+  button, input, textarea, select {
+    font-family: var(--font-sans);
+  }
+
+  /* Code elements - Mono font (Geist Mono) */
+  code, pre, kbd, samp, var {
+    font-family: var(--font-mono);
+  }
+
+  /* Table elements - Inter font with secondary color */
+  td, th {
+    font-family: var(--font-sans);
+    color: var(--color-text-secondary);
+  }
+
+  /* Links inherit color but use Inter font */
+  a {
+    font-family: var(--font-sans);
+  }
+}
 
 html {
   scroll-behavior: smooth;
-}
-
-/* Base - Inter font and primary text color */
-body {
-  font-family: var(--font-sans);
-  color: var(--color-text-primary);
-}
-
-/* Headings - Display font (Space Grotesk) */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: var(--color-text-primary);
-}
-
-/* Body text - Inter font with secondary color */
-p, blockquote, li, small, figcaption, label, span {
-  color: var(--color-text-secondary);
-  font-family: var(--font-sans);
-}
-
-/* Form elements - Inter font */
-button, input, textarea, select {
-  font-family: var(--font-sans);
-}
-
-/* Code elements - Mono font (Geist Mono) */
-code, pre, kbd, samp, var {
-  font-family: var(--font-mono);
-}
-
-/* Table elements - Inter font with secondary color */
-td, th {
-  font-family: var(--font-sans);
-  color: var(--color-text-secondary);
-}
-
-/* Links inherit color but use Inter font */
-a {
-  font-family: var(--font-sans);
 }
 
 a.link {

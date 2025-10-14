@@ -5,13 +5,14 @@ export const projects: Project[] = [
     id: 1,
     title: "Sistem Evaluasi Guru",
     description: {
-      header: "",
+      header: "One of my personal favorite projects, this was my first time leading a development team and I learned how to work with clients, communicate with my team and meet deadlines.",
       text: "Teacher Evaluation System (Sistem Evaluasi Guru) is a web-based application built to simplify and automate the teacher evaluation process.",
       techStack: ['MySQL', 'PHP v8.3.12', 'Laravel v5.19.0', 'TailwindCSS v3.1.0', 'Pest v3.8.2', 'Git v2.46.2']
     },
     summary: "Web-based teacher evaluation system replacing manual spreadsheet workflows with automated, scalable assessments.",
     thumbnailPath: "/images/screenshot_sistem_evaluasi_guru_1.webp",
     imgPaths: [
+      "/images/screenshot_sistem_evaluasi_guru_1.webp",
       "/images/screenshot_sistem_evaluasi_guru_2.webp",
       "/images/screenshot_sistem_evaluasi_guru_3.webp",
       "/images/screenshot_sistem_evaluasi_guru_4.webp"
@@ -28,6 +29,12 @@ export const projects: Project[] = [
     },
     summary: "Fullstack language-learning platform built for Indonesians to master English through structured lessons and gamified progression.",
     thumbnailPath: "/images/screenshot_inggrisland_1.webp",
+    imgPaths: [
+      "/images/screenshot_inggrisland_1.webp",
+      "/images/screenshot_inggrisland_2.webp",
+      "/images/screenshot_inggrisland_3.webp",
+      "/images/screenshot_inggrisland_4.webp"
+    ],
     href: "https://github.com/MadyanArashy/inggrisland"
   },
 ]
