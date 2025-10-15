@@ -10,7 +10,7 @@ export type Project = {
   },
   summary: string,
   thumbnailPath: string,
-  imgPaths: string[],
+  imgPaths?: string[],
   href: Url
 }
 

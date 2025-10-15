@@ -1,107 +1,69 @@
-'use client'
-
+// app/projects/[id]/page.tsx
 import { projects } from '@/data'
-import { useState, use } from 'react'
 import Image from 'next/image'
+import Gallery from '@/partials/Gallery'
+import { compile } from '@mdx-js/mdx'
+import { evaluate } from '@mdx-js/mdx'
+import * as runtime from 'react/jsx-runtime'
+import Link from 'next/link'
+import { Github } from "@deemlol/next-icons";
 
-export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
+export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const found = projects.find(p => p.id === Number(id))
   if (!found) return <div>Project not found</div>
   const project = found
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const hasGallery = Array.isArray(project.imgPaths) && project.imgPaths.length > 0
-  const currentImg = hasGallery ? project.imgPaths[currentIndex] : null
-
-  function openGallery(index = 0) {
-    if (!hasGallery) return
-    setCurrentIndex(index)
-    setIsOpen(true)
-  }
-
-  function closeGallery() {
-    setIsOpen(false)
-  }
-
-  function prevImage() {
-    if (!hasGallery) return
-    setCurrentIndex(prev => (prev - 1 + project.imgPaths.length) % project.imgPaths.length)
-  }
-
-  function nextImage() {
-    if (!hasGallery) return
-    setCurrentIndex(prev => (prev + 1) % project.imgPaths.length)
-  }
+  // compile and evaluate MDX safely in ESM mode
+  const { default: Content } = await evaluate(project.description.text, {
+    ...runtime,
+    baseUrl: import.meta.url,
+  })
 
   return (
-    <>
-    <main className="mt-4 sm:mt-16 mx-auto max-w-3xl relative px-4">
-      <Image
-        src={project.thumbnailPath}
-        alt={`${project.title} homepage screenshot`}
-        width={1080}
-        height={250}
-        className="w-full cursor-pointer rounded-md"
-        onClick={() => openGallery(0)}
-      />
-        <div>
-            <h1 className="text-3xl font-semibold mt-4 mb-4">{project.title}</h1>
-            {project.description.header &&
-            <div className='px-4 py-2 rounded-md bg-secondary border border-border mb-4'>
-                <p className='italic'>
-                    Note: {' '}
-                    {project.description.header}
-                </p>
-            </div>
-            }
-            <p>
-                {project.description.text}
-            </p>
-        </div>
+    <main className="mt-4 sm:mt-24 mx-auto max-w-2xl relative px-4">
+      {project.imgPaths?.length ? (
+        <Gallery images={project.imgPaths} />
+      ) : (
+        <Image
+          src={project.thumbnailPath}
+          alt={`${project.title} homepage screenshot`}
+          width={1080}
+          height={250}
+          className="w-full rounded-md"
+        />
+      )}
+
+      <div className="mt-6">
+          <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+          <div className="grid sm:grid-cols-3 gap-2 mb-6">
+              <div className="px-4 py-2 rounded-md bg-secondary border border-border">
+                <h3 className='text-nowrap'>Tech Stack:</h3>
+                <ol>
+                    {project.description.techStack.map((item, id) => (
+                        <li key={id} className='text-nowrap'>
+                            - {item}
+                        </li>
+                    ))}
+                </ol>
+              </div>
+              {project.description.header && (
+                <div className="flex items-center justify-center px-4 py-2 rounded-md bg-secondary border border-border sm:col-span-2">
+                  <p className="italic">{project.description.header}</p>
+                </div>
+              )}
+          </div>
+          <article className="prose max-w-full mb-6 mdx text-justify">
+            <Content />
+          </article>
+            <Link
+                href={project.href}
+                className="relative inline-flex flex-row gap-2 rounded-lg bg-black border border-border px-4 py-2 transition mb-6"
+            >
+                <Github size={24} color="#fff" />
+                <p className="text-text-primary">Repository</p>
+            </Link>
+      </div>
     </main>
-
-    {/* Gallery */}
-    {isOpen && (
-      <figure className="fixed inset-0 bg-[rgba(0,0,0,0.85)] flex items-center justify-center z-50 p-4">
-        <button
-          onClick={closeGallery}
-          className="absolute top-4 right-6 text-white text-4xl font-bold cursor-pointer"
-        >
-          &times;
-        </button>
-
-        {currentImg && (
-          <img
-            src={currentImg}
-            alt={`${project.title} gallery image`}
-            className="w-full max-w-5xl h-auto max-h-[80vh] object-contain rounded-md shadow-lg mx-auto transition-all duration-300"
-          />
-        )}
-
-        <button
-          onClick={prevImage}
-          disabled={!hasGallery}
-          className={`absolute left-4 sm:left-8 text-white text-6xl font-bold select-none cursor-pointer p-4 z-50 text-shadow-sm ${
-            !hasGallery ? 'opacity-40 cursor-not-allowed' : ''
-          }`}
-        >
-          &lsaquo;
-        </button>
-
-        <button
-          onClick={nextImage}
-          disabled={!hasGallery}
-          className={`absolute right-4 sm:right-8 text-white text-6xl font-bold select-none cursor-pointer p-4 z-50 text-shadow-sm ${
-            !hasGallery ? 'opacity-40 cursor-not-allowed' : ''
-          }`}
-        >
-          &rsaquo;
-        </button>
-      </figure>
-    )}
-    </>
   )
 }

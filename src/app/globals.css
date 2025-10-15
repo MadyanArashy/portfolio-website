@@ -18,6 +18,7 @@
   --color-accent-primary: #A371F7; /* vibrant purple highlight */
   --color-accent-secondary: #BB86FC; /* lighter purple for hover/subtle highlights */
 
+  font-size: 16px;
 }
 
 @theme inline {
@@ -51,7 +52,23 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--color-text-primary);
+    font-weight: 600;
   }
+
+  /* Default Font Sizes */
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.85rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4, h5, p {
+    font-size: 1rem;
+  }
+
 
   /* Body text - Inter font with secondary color */
   p, blockquote, li, small, figcaption, label, span {
@@ -78,6 +95,11 @@
   /* Links inherit color but use Inter font */
   a {
     font-family: var(--font-sans);
+  }
+
+  article.mdx ul {
+    list-style-type: disc;
+    margin-left: 1rem;
   }
 }
 

@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-6xl gap-12">
         <div className="text-center lg:text-left lg:flex-1">
           <h1 className="text-5xl lg:text-6xl font-bold mb-2">Madyan Arashy</h1>
-          <h2 className="text-xl lg:text-2xl text-[var(--color-accent-primary)] font-bold mb-6">Web Developer</h2>
+          <h2 className="text-xl lg:text-2xl text-[var(--color-accent-primary)] font-semibold mb-6">Web Developer</h2>
           <p className="max-w-2xl mx-auto lg:mx-0 mb-8 text-[var(--color-text-secondary)] font-bold">
             Hi, I'm a 17 year old aspiring Web Developer & Software Engineer looking to find my place in the world.
           </p>
@@ -16,7 +16,7 @@ export default function Hero() {
               — Willie Nelson
             </span>
           </blockquote>
-          <a href="#cta" className="inline-block px-6 py-3 rounded-lg bg-[var(--color-accent-primary)] hover:bg-[var(--color-accent-secondary)] transition font-bold">
+          <a href="#cta" className="inline-block px-6 py-3 rounded-lg bg-accent-primary hover:bg-accent-secondary transition font-bold">
             Contact Me
           </a>
         </div>
