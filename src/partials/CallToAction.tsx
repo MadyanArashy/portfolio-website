@@ -4,9 +4,9 @@ export default function CallToAction() {
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-3xl font-semibold mb-6">Let’s Connect</h2>
         <div className="flex justify-center gap-6 mb-10">
-          <a href="mailto:example@email.com" className="hover:text-[var(--color-accent-primary)]">Email</a>
-          <a href="https://linkedin.com" className="hover:text-[var(--color-accent-primary)]">LinkedIn</a>
-          <a href="https://github.com" className="hover:text-[var(--color-accent-primary)]">GitHub</a>
+          <a href="mailto:madyanarrashy38@gmail.com" className="hover:text-[var(--color-accent-primary)]">Email</a>
+          <a href="https://www.linkedin.com/in/madyan-arashy" className="hover:text-[var(--color-accent-primary)]">LinkedIn</a>
+          <a href="https://github.com/MadyanArashy" className="hover:text-[var(--color-accent-primary)]">GitHub</a>
         </div>
         <form className="grid gap-4 text-left">
           <input

@@ -8,7 +8,12 @@ import * as runtime from 'react/jsx-runtime'
 import Link from 'next/link'
 import { Github } from "@deemlol/next-icons";
 
+// Simulate async delay
+// const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  // await delay(1000);
+  
   const { id } = await params
   const found = projects.find(p => p.id === Number(id))
   if (!found) return <div>Project not found</div>

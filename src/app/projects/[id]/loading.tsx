@@ -3,7 +3,7 @@ export default function ProjectLoading() {
   return (
     <main className="mt-4 sm:mt-24 mx-auto max-w-2xl relative px-4">
       {/* Image/Gallery Skeleton */}
-      <div className="w-full aspect-[1080/250] rounded-md bg-secondary/50 animate-pulse" />
+      <div className="w-full h-[300px] rounded-md bg-secondary/50 animate-pulse" />
 
       <div className="mt-6">
         {/* Title Skeleton */}

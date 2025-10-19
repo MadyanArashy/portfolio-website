@@ -15,9 +15,19 @@ export const projectArticles: string[] =
   <br/>
   ### Features:
   - Authentication
-  - Role-based authorization
+  - Role-based authorization/access control
   - Teaching Staff Evaluation
   - Promotion of honor teachers
+  - Create and update evaluation components
+  `,
+  `
+  **InggrisLand** is an Indonesian web-based platform for learning English with progressive levels and extensive question banks.
+  This application allowed users to explore quizzes and complete a set of questions in English and track how many
+  questions they got right.
+  <br/>
+  This project includes authentication for users to save their progress and compare scores to their previous test.
+  Built using the React library and TailwindCSS for a fast lightweight user interface and Node.js + Express as
+  the main backend frameworks.
   `
 ];
 
@@ -54,10 +64,7 @@ export const projects: Project[] = [
     title: 'InggrisLand',
     description: {
       header: 'Inspired by similar existing language-learning apps. Learned how to create fullstack web applications using React and Node.js',
-      text: `
-      **InggrisLand** is an Indonesian web-based platform for learning English with progressive levels and extensive question banks.
-
-      `,
+      text: projectArticles[1],
       techStack: [
         'MySQL',
         'React v19.0.0',
