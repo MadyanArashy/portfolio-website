@@ -16,7 +16,7 @@ function NavLink({ href, label, Icon }: LinkItem) {
 
   return (
     <Link
-      href={href}
+      href={isActive ? "/#" : href}
       aria-label={label}
       className={`flex flex-col items-center text-sm transition ${
         isActive

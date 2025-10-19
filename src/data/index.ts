@@ -53,19 +53,10 @@ export const projects: Project[] = [
     id: 2,
     title: 'InggrisLand',
     description: {
-      header: '',
+      header: 'Inspired by similar existing language-learning apps. Learned how to create fullstack web applications using React and Node.js',
       text: `
       **InggrisLand** is an Indonesian web-based platform for learning English with progressive levels and extensive question banks.
 
-      ### Tech Stack
-      - MySQL  
-      - React v19.0.0  
-      - Axios v1.9.0  
-      - TailwindCSS v4.1.5  
-      - TypeScript v5.7.2  
-      - ESLint v9.22.0  
-      - Vite v6.3.1  
-      - Git v2.46.2
       `,
       techStack: [
         'MySQL',
