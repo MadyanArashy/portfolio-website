@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { Project, Certificates } from "@/types";
 
 export const projectArticles: string[] =
 [
@@ -20,6 +20,7 @@ export const projectArticles: string[] =
   - Promotion of honor teachers
   - Create and update evaluation components
   `,
+
   `
   **InggrisLand** is an Indonesian web-based platform for learning English with progressive levels and extensive question banks.
   This application allowed users to explore quizzes and complete a set of questions in English and track how many
@@ -28,7 +29,12 @@ export const projectArticles: string[] =
   This project includes authentication for users to save their progress and compare scores to their previous test.
   Built using the React library and TailwindCSS for a fast lightweight user interface and Node.js + Express as
   the main backend frameworks.
+  `,
+
   `
+  ### About The Project
+  **Moodtracker** is React Native Expo + Laravel full-stack web app built to implement RESTful API
+  `,
 ];
 
 export const projects: Project[] = [
@@ -85,6 +91,34 @@ export const projects: Project[] = [
       '/images/screenshot_inggrisland_3.webp',
       '/images/screenshot_inggrisland_4.webp',
     ],
-    href: 'https://github.com/MadyanArashy/inggrisland',
+    href: 'https://github.com/MadyanArashy/inggris-land',
   },
+  {
+    id: 3,
+    title: 'Moodtracker',
+    description: {
+      text: projectArticles[0],
+      techStack: [
+        'MySQL',
+        'React Native v0.81.4',
+        'React Native Reanimated v4.1.1',
+        'TypeScript v5.9.2',
+        'Expo v54.0.13',
+        'Laravel v12.0',
+      ]
+    },
+    thumbnailPath: '/images/screenshot-expro-hotel-1.webp',
+    summary:
+      'Multi-purpose task to-do list managing mobile application implementing RESTful API using local MySQL database, NewsAPI and MyAnimeList API.',
+    href: 'https://github.com/MadyanArashy/moodtracker'
+  }
 ];
+
+export const certificates: Certificates[] = [
+  {
+    id: 1,
+    title: 'TOEIC English Test',
+    description: 'Achieved an English TOEIC score of 895, administered by PT International Test Center (ITC).',
+    imgPath: '/images/TOEIC-madyan-arashy.jpg'
+  }
+]
