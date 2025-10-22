@@ -1,12 +1,22 @@
+import { Email, Linkedin, Github } from "@deemlol/next-icons";
 export default function CallToAction() {
   return (
     <section id="cta" className="py-20 px-6">
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-3xl font-semibold mb-6">Let’s Connect</h2>
         <div className="flex justify-center gap-6 mb-10">
-          <a href="mailto:madyanarrashy38@gmail.com" className="hover:text-[var(--color-accent-primary)]">Email</a>
-          <a href="https://www.linkedin.com/in/madyan-arashy" className="hover:text-[var(--color-accent-primary)]">LinkedIn</a>
-          <a href="https://github.com/MadyanArashy" className="hover:text-[var(--color-accent-primary)]">GitHub</a>
+          <div className="flex flex-row space-x-1.5 justify-center items-center">
+            <Email color="red" size={16}/>
+            <a href="mailto:madyanarrashy38@gmail.com" className="hover:text-accent-primary">Email</a>
+          </div>
+          <div className="flex flex-row space-x-1.5 justify-center items-center">
+            <Linkedin color="aquamarine" size={16}/>
+            <a href="https://www.linkedin.com/in/madyan-arashy" className="hover:text-accent-primary">LinkedIn</a>
+          </div>
+          <div className="flex flex-row space-x-1.5 justify-center items-center">
+            <Github color="white" size={16}/>
+            <a href="https://github.com/MadyanArashy" className="hover:text-accent-primary">GitHub</a>
+          </div>
         </div>
         <form className="grid gap-4 text-left">
           <input

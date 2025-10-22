@@ -32,12 +32,14 @@ export default function Gallery({ images }: { images: string[] }) {
   return (
     <>
       {hasGallery && (
-        <img
-          src={images[0]}
-          alt="thumbnail"
-          className="w-full cursor-pointer rounded-md"
-          onClick={() => openGallery(0)}
-        />
+        <button onClick={() => openGallery(0)} className='w-full'>
+          <img
+            src={images[0]}
+            alt="thumbnail"
+            className="w-full rounded-md h-auto max-h-128 object-contain cursor-pointer"
+            
+          />
+        </button>
       )}
 
       {isOpen && (
@@ -49,18 +51,22 @@ export default function Gallery({ images }: { images: string[] }) {
             &times;
           </button>
 
+          <span className='absolute top-24 left-auto right-auto md:hidden'>
+            Rotate phone for better viewing experience
+          </span>
+
           {currentImg && (
             <img
               src={currentImg}
               alt="gallery image"
-              className="w-full max-w-5xl h-auto max-h-[80vh] object-contain rounded-md shadow-lg mx-auto transition-all duration-300"
+              className="w-full max-w-5xl h-auto max-h-[80vh] object-contain rounded-md shadow-lg mx-auto transition-all duration-300 z-80"
             />
           )}
 
           <button
             onClick={prevImage}
             disabled={!hasGallery}
-            className={`absolute left-4 sm:left-8 text-white text-6xl font-bold select-none cursor-pointer p-4 z-50 text-shadow-sm ${
+            className={`absolute left-4 sm:left-8 text-white text-6xl font-bold select-none cursor-pointer p-4 z-100 text-shadow-sm ${
               !hasGallery ? 'opacity-40 cursor-not-allowed' : ''
             }`}
           >
@@ -70,7 +76,7 @@ export default function Gallery({ images }: { images: string[] }) {
           <button
             onClick={nextImage}
             disabled={!hasGallery}
-            className={`absolute right-4 sm:right-8 text-white text-6xl font-bold select-none cursor-pointer p-4 z-50 text-shadow-sm ${
+            className={`absolute right-4 sm:right-8 text-white text-6xl font-bold select-none cursor-pointer p-4 z-100 text-shadow-sm ${
               !hasGallery ? 'opacity-40 cursor-not-allowed' : ''
             }`}
           >

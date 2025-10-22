@@ -11,12 +11,12 @@ import { Github } from "@deemlol/next-icons";
 // Simulate async delay
 // const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectPage({ params }: { params: Promise<{ id: number }> }) {
   // await delay(1000);
   
   const { id } = await params
   const found = projects.find(p => p.id === Number(id))
-  if (!found) return <div>Project not found</div>
+  if (!found) return <div className="mt-4 sm:mt-24 mx-auto max-w-2xl relative px-4">Project not found</div>
   const project = found
 
   // compile and evaluate MDX safely in ESM mode
@@ -30,13 +30,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       {project.imgPaths?.length ? (
         <Gallery images={project.imgPaths} />
       ) : (
-        <Image
-          src={project.thumbnailPath}
-          alt={`${project.title} homepage screenshot`}
-          width={1080}
-          height={250}
-          className="w-full rounded-md"
-        />
+          <Image
+            src={project.thumbnailPath}
+            alt={`${project.title} homepage screenshot`}
+            width={1080}
+            height={250}
+            className="w-full rounded-md h-auto max-h-128 object-contain"
+          />
       )}
 
       <div className="mt-6">
@@ -64,6 +64,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             <Link
                 href={project.href}
                 className="relative inline-flex flex-row gap-2 rounded-lg bg-black border border-border px-4 py-2 transition mb-6"
+                target='_blank'
             >
                 <Github size={24} color="#fff" />
                 <p className="text-text-primary">Repository</p>

@@ -1,41 +1,5 @@
-import { Project, Certificates } from "@/types";
-
-export const projectArticles: string[] =
-[
-  `
-  ### About The Project
-  **Teacher Evaluation System (Sistem Evaluasi Guru)** is a Laravel-based web app
-  built to simplify and automate the teacher evaluation process. The project involved
-  developing a system that allows school executive staff, such as principals and vice-principals,
-  to evaluate teaching staff through configurable evaluation components.  
-  <br/>
-  Each component, evaluation and semesters are handled by an administrator, making the experience
-  seamless for the user. Teachers are also able to look at their own evaluations, and honor teachers
-  may be promoted to permanent teacher when their average evaluation score reach a certain threshold.  
-  <br/>
-  ### Features:
-  - Authentication
-  - Role-based authorization/access control
-  - Teaching Staff Evaluation
-  - Promotion of honor teachers
-  - Create and update evaluation components
-  `,
-
-  `
-  **InggrisLand** is an Indonesian web-based platform for learning English with progressive levels and extensive question banks.
-  This application allowed users to explore quizzes and complete a set of questions in English and track how many
-  questions they got right.
-  <br/>
-  This project includes authentication for users to save their progress and compare scores to their previous test.
-  Built using the React library and TailwindCSS for a fast lightweight user interface and Node.js + Express as
-  the main backend frameworks.
-  `,
-
-  `
-  ### About The Project
-  **Moodtracker** is React Native Expo + Laravel full-stack web app built to implement RESTful API
-  `,
-];
+import { Project, Certificate } from "@/types";
+import ProjectArticles from "./projectArticles";
 
 export const projects: Project[] = [
   {
@@ -44,7 +8,7 @@ export const projects: Project[] = [
     description: {
       header:
         'Led a team to develop a teacher evaluation system for SMK Pesat. Oversaw client communication, task coordination, and deadline management.',
-      text: projectArticles[0],
+      text: ProjectArticles[0],
       techStack: [
         'MySQL',
         'PHP v8.3.12',
@@ -70,7 +34,7 @@ export const projects: Project[] = [
     title: 'InggrisLand',
     description: {
       header: 'Inspired by similar existing language-learning apps. Learned how to create fullstack web applications using React and Node.js',
-      text: projectArticles[1],
+      text: ProjectArticles[1],
       techStack: [
         'MySQL',
         'React v19.0.0',
@@ -97,28 +61,135 @@ export const projects: Project[] = [
     id: 3,
     title: 'Moodtracker',
     description: {
-      text: projectArticles[0],
+      text: ProjectArticles[2],
       techStack: [
         'MySQL',
         'React Native v0.81.4',
-        'React Native Reanimated v4.1.1',
+        'RN Reanimated v4.1.1',
         'TypeScript v5.9.2',
         'Expo v54.0.13',
         'Laravel v12.0',
       ]
     },
-    thumbnailPath: '/images/screenshot-expro-hotel-1.webp',
+    thumbnailPath: '/images/screenshot-moodtracker-1.webp',
+    imgPaths: [
+      '/images/screenshot-moodtracker-1.webp',
+      '/images/screenshot-moodtracker-2.webp',
+      '/images/screenshot-moodtracker-3.webp',
+      '/images/screenshot-moodtracker-4.webp',
+      '/images/screenshot-moodtracker-5.webp',
+      '/images/screenshot-moodtracker-6.webp',
+      '/images/screenshot-moodtracker-7.webp',
+      '/images/screenshot-moodtracker-8.webp',
+    ],
     summary:
       'Multi-purpose task to-do list managing mobile application implementing RESTful API using local MySQL database, NewsAPI and MyAnimeList API.',
     href: 'https://github.com/MadyanArashy/moodtracker'
+  },
+  {
+    id: 5,
+    title: 'Laravel Library Management',
+    description: {
+      text: ProjectArticles[3],
+      techStack: [
+        'MySQL',
+        'Laravel v11.9',
+        'Pest v3.5',
+        'TailwindCSS v3.4.14',
+      ]
+    },
+    thumbnailPath: '/images/screenshot-library-management-1.webp',
+    imgPaths: [
+      '/images/screenshot-library-management-1.webp',
+      '/images/screenshot-library-management-2.webp',
+      '/images/screenshot-library-management-3.webp',
+      '/images/screenshot-library-management-4.webp',
+      '/images/screenshot-library-management-5.webp',
+      '/images/screenshot-library-management-6.webp',
+      '/images/screenshot-library-management-7.webp',
+    ],
+    summary:
+      'Full-stack book lending management app for school libraries to simplify managing book inventory.',
+    href: 'https://github.com/MadyanArashy/library-management-laravel'
+  },
+
+  // Hotel Expro
+  {
+    id: 6,
+    title: 'Expro Hotel',
+    description: {
+      text: ProjectArticles[4],
+      techStack: [
+        'PHP',
+        'Bootstrap v4'
+      ],
+    },
+    thumbnailPath: '/images/screenshot-expro-hotel-1.webp',
+    imgPaths: [
+      '/images/screenshot-expro-hotel-1.webp',
+      '/images/screenshot-expro-hotel-2.webp',
+      '/images/screenshot-expro-hotel-3.webp',
+      '/images/screenshot-expro-hotel-4.webp',
+      '/images/screenshot-expro-hotel-5.webp',
+      '/images/screenshot-expro-hotel-6.webp',
+      '/images/screenshot-expro-hotel-7.webp',
+      '/images/screenshot-expro-hotel-8.webp',
+      '/images/screenshot-expro-hotel-9.webp',
+      '/images/screenshot-expro-hotel-10.webp',
+      '/images/screenshot-expro-hotel-11.webp',
+      '/images/screenshot-expro-hotel-12.webp',
+      '/images/screenshot-expro-hotel-13.webp',
+    ],
+    summary: 'Full-stack hotel booking app built with PHP and Bootstrap',
+    href: 'https://github.com/MadyanArashy/sertikom-semester-2'
   }
 ];
 
-export const certificates: Certificates[] = [
+export const certificates: Certificate[] = [
   {
     id: 1,
     title: 'TOEIC English Test',
     description: 'Achieved an English TOEIC score of 895, administered by PT International Test Center (ITC).',
-    imgPath: '/images/TOEIC-madyan-arashy.jpg'
-  }
+    thumbnailPath: '/images/TOEIC-madyan-arashy.jpg',
+  },
+  {
+    id: 2,
+    title: 'Fullstack Mobile App, 2025',
+    description: 'Built a fullstack mobile app using React Native and Laravel. Scored 90 (Competent), certified by GINVO Studio.',
+    thumbnailPath: '/images/sertikom-4.jpg',
+    imgPaths: [
+      '/images/sertikom-4.jpg',
+      '/images/sertikom-4-back.jpg',
+    ]
+  },
+  {
+    id: 3,
+    title: 'Web Development with Laravel Framework, 2024',
+    description: 'Built a library management application using Laravel. Scored 93 (Competent), certified by PT Kreasi Media.',
+    thumbnailPath: '/images/sertikom-3.jpg',
+    imgPaths: [
+      '/images/sertikom-3.jpg',
+      '/images/sertikom-3-back.jpg',
+    ]
+  },
+  {
+    id: 4,
+    title: 'Web-Based Application with PHP and MySQL, 2024',
+    description: 'Built a hotel booking web application using PHP. Scored 100 (Highly Competent), certified by PT Dimensi Kreasi Nusantara.',
+    thumbnailPath: '/images/sertikom-2.jpg',
+    imgPaths: [
+      '/images/sertikom-2.jpg',
+      '/images/sertikom-2-back.jpg',
+    ]
+  },
+  {
+    id: 5,
+    title: 'Landing Page Development with HTML and CSS, 2023',
+    description: 'Built a landing page using HTML and CSS. Scored 100 (Competent), certified by PT Wan Teknologi Internasional.',
+    thumbnailPath: '/images/sertikom-1.jpg',
+    imgPaths: [
+      '/images/sertikom-1.jpg',
+      '/images/sertikom-1-back.jpg',
+    ]
+  },
 ]

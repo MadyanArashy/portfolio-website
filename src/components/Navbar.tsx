@@ -24,8 +24,8 @@ function NavLink({ href, label, Icon }: LinkItem) {
           : "text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)]"
       }`}
     >
-      <Icon className="w-5 h-5 mb-1" />
-      <span className="sr-only sm:not-sr-only">{label}</span>
+      <Icon className="w-5.5 h-5.5 mb-1" />
+      <span className="sr-only">{label}</span>
     </Link>
   );
 }
@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed bottom-0 sm:top-0 sm:bottom-auto w-full bg-[var(--color-secondary)] border-t sm:border-b border-[var(--color-border)] z-50">
-      <div className="max-w-6xl mx-auto flex justify-around sm:justify-center sm:space-x-10 p-3">
+      <div className="max-w-6xl mx-auto flex justify-around sm:justify-center sm:space-x-20 p-3">
         {links.map((link) => (
           <NavLink key={link.href} {...link} />
         ))}

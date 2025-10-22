@@ -12,9 +12,10 @@ export default function HighlightedCerts() {
          {highlights.map((item) => (
           <Card
             key={item.id}
+            href={`/certifications/${item.id}`}
             title={item.title}
             description={item.description}
-            imgUrl={item.imgPath}
+            imgUrl={item.thumbnailPath}
           />
          ))}
         </div>

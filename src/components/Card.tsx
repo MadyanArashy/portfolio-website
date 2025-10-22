@@ -13,7 +13,7 @@ interface CardProps {
 export default function Card({ href, title, description, imgUrl, alt }: CardProps) {
   const content = (
     <div className="p-6">
-      <div className="w-full h-auto bg-[var(--color-border)] rounded-md mb-4 flex items-center justify-center">
+      <div className="w-full h-40 bg-[var(--color-border)] rounded-md mb-4 flex items-center justify-center">
         <Image
           src={imgUrl || '/og-image.jpg'}
           alt={alt || `${title} project screenshot`}

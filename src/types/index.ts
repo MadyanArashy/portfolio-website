@@ -14,9 +14,10 @@ export type Project = {
   href: Url
 }
 
-export type Certificates = {
+export type Certificate = {
   id: number,
   title: string,
   description: string
-  imgPath: string,
+  thumbnailPath: string,
+  imgPaths?: string[],
 }
