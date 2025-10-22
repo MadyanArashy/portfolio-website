@@ -35,7 +35,6 @@ export default function Navbar() {
     { href: "/", label: "Home", Icon: House },
     { href: "/projects", label: "Projects", Icon: Briefcase },
     { href: "/certifications", label: "Certifications", Icon: Award },
-    { href: "/blogs", label: "Blogs", Icon: FileText },
   ];
 
   return (
