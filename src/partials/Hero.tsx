@@ -22,7 +22,7 @@ export default function Hero() {
         </div>
         <div className="w-40 h-40 lg:w-64 lg:h-64 rounded-full overflow-hidden bg-[var(--color-border)] flex items-center justify-center flex-shrink-0">
           <Image
-            src={`/MADYAN_ARASHY.jpg`}
+            src={'/MADYAN_ARASHY.jpg'}
             alt="Madyan Arashy"
             width={256}
             height={256}
