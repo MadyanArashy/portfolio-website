@@ -8,10 +8,10 @@ export default function Hero() {
           <h1 className="text-5xl lg:text-6xl font-bold mb-2">Madyan Arashy</h1>
           <h2 className="text-xl lg:text-2xl text-[var(--color-accent-primary)] font-semibold mb-6">Web Developer</h2>
           <p className="max-w-2xl mx-auto lg:mx-0 mb-8 text-[var(--color-text-secondary)] font-bold">
-            Hi, I'm a 17 year old Web Developer and aspiring Software Developer, turning ideas into digital solutions for real world problems.
+            Hi, I&apos;m a 17 year old Web Developer and aspiring Software Developer, turning ideas into digital solutions for real world problems.
           </p>
           <blockquote className="italic border-l-4 border-[var(--color-accent-primary)] pl-4 mb-8 leading-relaxed font-bold">
-            &apos;If you cannot do great things, do small things."&quot;
+            &apos;If you cannot do great things, do small things.&quot;
             <span className="block mt-2 text-sm not-italic">
               — Willie Nelson
             </span>

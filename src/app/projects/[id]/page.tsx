@@ -2,7 +2,6 @@
 import { projects } from '@/data'
 import Image from 'next/image'
 import Gallery from '@/partials/Gallery'
-import { compile } from '@mdx-js/mdx'
 import { evaluate } from '@mdx-js/mdx'
 import * as runtime from 'react/jsx-runtime'
 import Link from 'next/link'
