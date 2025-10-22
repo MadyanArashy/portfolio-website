@@ -16,13 +16,18 @@ export default function Hero() {
               — Willie Nelson
             </span>
           </blockquote>
-          <a href="#cta" className="inline-block px-6 py-3 rounded-lg bg-accent-primary hover:bg-accent-secondary transition font-bold">
-            Contact Me
-          </a>
+          <div className="flex flex-row gap-4">
+            <a href="#cta" className="inline-block px-6 py-3 rounded-lg bg-accent-primary hover:bg-accent-secondary transition font-bold">
+              Contact Me
+            </a>
+            <a href="/pdf/madyan-arashy-cv.pdf" target="_blank" download={true} className="inline-block px-6 py-3 rounded-lg bg-accent-primary/25 hover:bg-accent-secondary/25 transition font-bold">
+              Download my CV
+            </a>
+          </div>
         </div>
         <div className="w-40 h-40 lg:w-64 lg:h-64 rounded-full overflow-hidden bg-[var(--color-border)] flex items-center justify-center flex-shrink-0">
           <Image
-            src={'/MADYAN_ARASHY.jpg'}
+            src={'/images/MADYAN_ARASHY.jpg'}
             alt="Madyan Arashy"
             width={256}
             height={256}

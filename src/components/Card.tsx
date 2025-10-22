@@ -20,6 +20,7 @@ export default function Card({ href, title, description, imgUrl, alt }: CardProp
           width={200}
           height={200}
           className="w-full h-full object-cover"
+          quality={50}
         />
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
