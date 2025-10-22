@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Gallery({ images }: { images: string[] }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,11 +34,12 @@ export default function Gallery({ images }: { images: string[] }) {
     <>
       {hasGallery && (
         <button onClick={() => openGallery(0)} className='w-full'>
-          <img
+          <Image
             src={images[0]}
             alt="thumbnail"
             className="w-full rounded-md h-auto max-h-128 object-contain cursor-pointer"
-            
+            width={300}
+            height={300}
           />
         </button>
       )}
@@ -56,10 +58,12 @@ export default function Gallery({ images }: { images: string[] }) {
           </span>
 
           {currentImg && (
-            <img
+            <Image
               src={currentImg}
               alt="gallery image"
               className="w-full max-w-5xl h-auto max-h-[80vh] object-contain rounded-md shadow-lg mx-auto transition-all duration-300 z-80"
+              width={300}
+              height={300}
             />
           )}
 

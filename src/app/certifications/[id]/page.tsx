@@ -1,8 +1,6 @@
 // app/projects/[id]/page.tsx
 import { certificates } from '@/data'
 import Image from 'next/image'
-import { evaluate } from '@mdx-js/mdx'
-import * as runtime from 'react/jsx-runtime'
 
 export default async function CertificatePage({ params }: { params: Promise<{ id: number }> }) {
   const { id } = await params
