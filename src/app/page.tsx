@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/partials/Hero";
 import About from "@/partials/About";
 import HighlightedProjects from "@/partials/HighlightedProjects";
