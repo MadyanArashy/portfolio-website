@@ -8,10 +8,9 @@ import Link from 'next/link'
 import { Github } from "@deemlol/next-icons";
 
 // Simulate async delay
-// const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
-
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 export default async function ProjectPage({ params }: { params: Promise<{ id: number }> }) {
-  // await delay(1000);
+  await delay(1000);
   
   const { id } = await params
   const found = projects.find(p => p.id === Number(id))
