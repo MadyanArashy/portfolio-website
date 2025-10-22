@@ -57,12 +57,7 @@ export default function Gallery({ images }: { images: string[] }) {
       {hasGallery && (
         <button onClick={() => openGallery(0)} className="w-full relative">
           {thumbnailLoading && (
-            <div className="absolute inset-0 p-6 border border-border animate-pulse rounded-lg">
-              <div className="w-full h-56 rounded-md mb-4 flex items-center justify-center bg-border/50 animate-pulse"></div>
-              <div className="mb-2 w-1/2 bg-text-primary/50 animate-pulse py-3"></div>
-              <div className="w-5/6 bg-text-secondary/50 animate-pulse py-2.5 mb-1"></div>
-              <div className="w-2/3 bg-text-secondary/50 animate-pulse py-2.5"></div>
-            </div>
+            <div className="absolute inset-0 p-6 w-full h-56 border bg-border/50 animate-pulse rounded-lg"></div>
           )}
           <Image
             src={images[0]}
