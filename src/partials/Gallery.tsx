@@ -57,7 +57,7 @@ export default function Gallery({ images }: { images: string[] }) {
       {hasGallery && (
         <button onClick={() => openGallery(0)} className="w-full relative">
           {thumbnailLoading && (
-            <div className="absolute inset-0 p-6 w-full h-56 border bg-border/50 animate-pulse rounded-lg"></div>
+            <div className="absolute inset-0 w-full h-[224px] md:h-[300px] rounded-md bg-secondary/50 animate-pulse"></div>
           )}
           <Image
             src={images[0]}
@@ -67,7 +67,7 @@ export default function Gallery({ images }: { images: string[] }) {
             }`}
             width={600}
             height={600}
-            quality={90}
+            quality={75}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
             onLoad={handleThumbnailLoad}
           />
@@ -101,7 +101,7 @@ export default function Gallery({ images }: { images: string[] }) {
                 className="w-full max-w-5xl h-auto max-h-[80vh] object-contain rounded-md shadow-lg mx-auto"
                 width={1920}
                 height={1920}
-                quality={95}
+                quality={90}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1920px"
                 priority
               />

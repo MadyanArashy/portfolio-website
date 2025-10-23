@@ -149,13 +149,17 @@ export const certificates: Certificate[] = [
   {
     id: 1,
     title: 'TOEIC English Test',
-    description: 'Achieved an English TOEIC score of 895, administered by PT International Test Center (ITC).',
+    date: '2025',
+    description: 'Achieved an English <abbr title="Test of English for International Communication">TOEIC</abbr> score of **975**, administered by **<abbr title="International Test Center">ITC</abbr>** Ltd.',
+    summary: 'Achieved an English TOEIC score of 975, administered by International Test Center Ltd.',
     thumbnailPath: '/images/TOEIC-madyan-arashy.jpg',
   },
   {
     id: 2,
-    title: 'Fullstack Mobile App, 2025',
-    description: 'Built a fullstack mobile app using React Native and Laravel. Scored 90 (Competent), certified by GINVO Studio.',
+    title: 'Fullstack Mobile App',
+    date: '2025',
+    description: 'Built a fullstack mobile app using React Native and Laravel. Scored **90 (Competent)**, certified by **GINVO Studio**.',
+    summary: 'Built a fullstack mobile app using React Native and Laravel. Scored 90 (Competent), certified by GINVO Studio.',
     thumbnailPath: '/images/sertikom-4.jpg',
     imgPaths: [
       '/images/sertikom-4.jpg',
@@ -164,8 +168,10 @@ export const certificates: Certificate[] = [
   },
   {
     id: 3,
-    title: 'Web Development with Laravel Framework, 2024',
-    description: 'Built a library management application using Laravel. Scored 93 (Competent), certified by PT Kreasi Media.',
+    title: 'Web Development with Laravel Framework',
+    date: '2024',
+    description: 'Built a library management application using Laravel. Scored **93 (Competent)**, certified by **PT Kreasi Media**.',
+    summary: 'Built a library management application using Laravel. Scored 93 (Competent), certified by PT Kreasi Media.',
     thumbnailPath: '/images/sertikom-3.jpg',
     imgPaths: [
       '/images/sertikom-3.jpg',
@@ -174,8 +180,10 @@ export const certificates: Certificate[] = [
   },
   {
     id: 4,
-    title: 'Web-Based Application with PHP and MySQL, 2024',
-    description: 'Built a hotel booking web application using PHP. Scored 100 (Highly Competent), certified by PT Dimensi Kreasi Nusantara.',
+    title: 'Web-Based Application with PHP and MySQL',
+    date: '2024',
+    description: 'Built a hotel booking web application using PHP. Scored **100 (Highly Competent)**, certified by **PT Dimensi Kreasi Nusantara**.',
+    summary: 'Built a hotel booking web application using PHP. Scored 100 (Highly Competent), certified by PT Dimensi Kreasi Nusantara.',
     thumbnailPath: '/images/sertikom-2.jpg',
     imgPaths: [
       '/images/sertikom-2.jpg',
@@ -184,8 +192,10 @@ export const certificates: Certificate[] = [
   },
   {
     id: 5,
-    title: 'Landing Page Development with HTML and CSS, 2023',
-    description: 'Built a landing page using HTML and CSS. Scored 100 (Competent), certified by PT Wan Teknologi Internasional.',
+    title: 'Landing Page Development with HTML and CSS',
+    date: '2023',
+    description: 'Built a landing page using HTML and CSS. Scored **100 (Competent)**, certified by **PT Wan Teknologi Internasional**.',
+    summary: 'Built a landing page using HTML and CSS. Scored 100 (Competent), certified by PT Wan Teknologi Internasional.',
     thumbnailPath: '/images/sertikom-1.jpg',
     imgPaths: [
       '/images/sertikom-1.jpg',

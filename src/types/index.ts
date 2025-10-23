@@ -17,7 +17,9 @@ export type Project = {
 export type Certificate = {
   id: number,
   title: string,
-  description: string
+  date?: string,
+  description: string,
+  summary: string,
   thumbnailPath: string,
   imgPaths?: string[],
 }

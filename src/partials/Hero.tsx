@@ -11,12 +11,12 @@ export default function Hero() {
             Hi, I&apos;m a 17 year old Web Developer and aspiring Software Developer, turning ideas into digital solutions for real world problems.
           </p>
           <blockquote className="italic border-l-4 border-[var(--color-accent-primary)] pl-4 mb-8 leading-relaxed font-bold">
-            &apos;If you cannot do great things, do small things.&quot;
+            &quot;If you cannot do great things, do small things.&quot;
             <span className="block mt-2 text-sm not-italic">
               — Willie Nelson
             </span>
           </blockquote>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row gap-4 w-full items-center justify-center lg:justify-start">
             <a href="#cta" className="inline-block px-6 py-3 rounded-lg bg-accent-primary hover:bg-accent-secondary transition font-bold">
               Contact Me
             </a>

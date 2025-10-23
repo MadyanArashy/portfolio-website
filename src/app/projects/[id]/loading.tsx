@@ -3,7 +3,7 @@ export default function ProjectLoading() {
   return (
     <main className="mt-4 sm:mt-24 mx-auto max-w-2xl relative px-4">
       {/* Image/Gallery Skeleton */}
-      <div className="w-full h-[300px] rounded-md bg-secondary/50 animate-pulse" />
+      <div className="w-full h-[224px] md:h-[300px] rounded-md bg-secondary/50 animate-pulse" />
 
       <div className="mt-6">
         {/* Title Skeleton */}
@@ -39,7 +39,7 @@ export default function ProjectLoading() {
         </article>
 
         {/* Repository Button Skeleton */}
-        <div className="inline-flex flex-row gap-2 rounded-lg bg-secondary/50 border border-border px-4 py-2 mb-6 animate-pulse">
+        <div className="inline-flex flex-row gap-2 rounded-lg bg-black/50 border border-border px-4 py-2 mb-6 animate-pulse">
           <div className="w-6 h-6 bg-secondary/50 rounded" />
           <div className="h-6 w-24 bg-secondary/50 rounded" />
         </div>

@@ -11,7 +11,7 @@ export default function Certifications() {
             key={item.id}
             href={`/certifications/${item.id}`}
             title={item.title}
-            description={item.description}
+            description={item.summary}
             imgUrl={item.thumbnailPath}
           />
         ))}
