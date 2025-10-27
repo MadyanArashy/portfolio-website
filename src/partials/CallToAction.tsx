@@ -18,7 +18,7 @@ export default function CallToAction() {
             <a href="https://github.com/MadyanArashy" className="hover:text-accent-primary">GitHub</a>
           </div>
         </div>
-        <form className="grid gap-4 text-left">
+        {/* <form className="grid gap-4 text-left">
           <input
             type="email"
             placeholder="Your email"
@@ -32,7 +32,7 @@ export default function CallToAction() {
           <button type="submit" className="px-6 py-3 rounded-lg bg-[var(--color-accent-primary)] hover:bg-[var(--color-accent-secondary)] transition">
             Send
           </button>
-        </form>
+        </form> */}
       </div>
     </section>
   );
