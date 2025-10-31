@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: nu
           </article>
             <Link
                 href={project.href}
-                className="relative inline-flex flex-row gap-2 rounded-lg bg-black border border-border px-4 py-2 transition mb-6"
+                className="relative inline-flex flex-row gap-2 rounded-lg bg-black border border-border px-4 py-2 transition mb-24 sm:mb-6"
                 target='_blank'
             >
                 <Github size={24} color="#fff" />
