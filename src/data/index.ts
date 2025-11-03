@@ -87,7 +87,7 @@ export const projects: Project[] = [
     href: 'https://github.com/MadyanArashy/moodtracker'
   },
   {
-    id: 5,
+    id: 4,
     title: 'Laravel Library Management',
     description: {
       text: ProjectArticles[3],
@@ -115,7 +115,7 @@ export const projects: Project[] = [
 
   // Hotel Expro
   {
-    id: 6,
+    id: 5,
     title: 'Expro Hotel',
     description: {
       text: ProjectArticles[4],

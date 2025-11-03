@@ -22,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://madyan.online"),
   title: {
-    default: "Madyan Arashy",
+    default: "Madyan Arashy — Web Developer & Software Engineer",
     template: "%s | Madyan Arashy",
   },
   description:
@@ -61,6 +61,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="canonical" href="https://madyan.online" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
         className={`${inter.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-primary text-text-primary`}
