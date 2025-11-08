@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  let projectMap: MetadataRoute.Sitemap = [];
+  const projectMap: MetadataRoute.Sitemap = [];
   for (let i = 1; i <= 5; i++) {
     projectMap.push({
       url: `https://madyan.online/projects/${i}`,
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   }
 
-  let certMap: MetadataRoute.Sitemap = [];
+  const certMap: MetadataRoute.Sitemap = [];
   for (let i = 1; i <= 5; i++) {
     certMap.push({
       url: `https://madyan.online/certifications/${i}`,

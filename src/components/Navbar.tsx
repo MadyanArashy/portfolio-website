@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Briefcase, Award, FileText } from "@deemlol/next-icons";
+import { House, Briefcase, Award } from "@deemlol/next-icons";
 
 type LinkItem = {
   href: string;
