@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectMap: MetadataRoute.Sitemap = [];
   for (let i = 1; i <= 5; i++) {
     projectMap.push({
-      url: `https://madyan.online/projects/${i}`,
+      url: `https://www.madyan.online/projects/${i}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const certMap: MetadataRoute.Sitemap = [];
   for (let i = 1; i <= 5; i++) {
     certMap.push({
-      url: `https://madyan.online/certifications/${i}`,
+      url: `https://www.madyan.online/certifications/${i}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
@@ -30,13 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://madyan.online/projects",
+      url: "https://www.madyan.online/projects",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://madyan.online/certifications",
+      url: "https://www.madyan.online/certifications",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
