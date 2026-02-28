@@ -1,4 +1,4 @@
-import { Project, Certificate } from "@/types";
+import { Project, Certificate, Quote } from "@/types";
 import ProjectArticles from "./projectArticles";
 
 export const projects: Project[] = [
@@ -202,4 +202,42 @@ export const certificates: Certificate[] = [
       '/images/sertikom-1-back.jpg',
     ]
   },
+]
+
+export const Quotes: Quote[] = [
+  {
+    id: 1,
+    author: 'Willie Nelson',
+    message: 'If you cannot do great things, do small things.'
+  },
+  {
+    id: 2,
+    author: 'John Ruskin',
+    message: 'Quality is never an accident. It is always the result of intelligent effort.'
+  },
+  {
+    id: 3,
+    author: 'Tommy Tuberville',
+    message: 'Positive attitude plus effort equals performance.'
+  },
+  {
+    id: 4,
+    author: 'Jim Rohn',
+    message: 'For every disciplined effort there is a multiple reward.'
+  },
+  {
+    id: 5,
+    author: 'Mark Twain',
+    message: 'It\'s not the size of the dog in the fight, it\'s the size of the fight in the dog.'
+  },
+  {
+    id: 6,
+    author: 'Vince Lombardi',
+    message: 'The achievements of an organization are the results of the combined effort of each individual.'
+  },
+  {
+    id: 7,
+    author: 'St. Jerome',
+    message: 'Good, better, best. Never let it rest. \'Til your good is better and your better is best.'
+  }
 ]

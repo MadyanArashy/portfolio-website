@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { Quotes } from "@/data";
 export default function Hero() {
+  const quote = Quotes[Math.floor(Math.random()*Quotes.length)];
   return (
     <section className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen px-6 lg:px-12">
       <div className="absolute inset-0 bg-linear-to-b from-secondary to-primary opacity-60" />
@@ -11,9 +13,9 @@ export default function Hero() {
             Hi, I&apos;m a 17 year old Web Developer and aspiring Software Developer, turning ideas into digital solutions for real world problems.
           </p>
           <blockquote className="italic border-l-4 border-accent-primary pl-4 mb-8 leading-relaxed">
-            &quot;If you cannot do great things, do small things.&quot;
-            <span className="block mt-2 text-sm not-italic">
-              — Willie Nelson
+            &quot;{quote.message}&quot;
+            <span className="block mt-2 text-sm not-italic font-bold">
+              — {quote.author}
             </span>
           </blockquote>
           <div className="flex flex-row gap-4 w-full items-center justify-center lg:justify-start">
