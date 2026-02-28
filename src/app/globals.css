@@ -17,7 +17,9 @@
   
   --color-accent-primary: #A371F7; /* vibrant purple highlight */
   --color-accent-secondary: #BB86FC; /* lighter purple for hover/subtle highlights */
+}
 
+html {
   font-size: 16px;
 }
 
