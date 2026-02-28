@@ -1,5 +1,3 @@
-import { Url } from "next/dist/shared/lib/router/router"
-
 export type Project = {
   id: number,
   title: string,
@@ -11,7 +9,7 @@ export type Project = {
   summary: string,
   thumbnailPath: string,
   imgPaths?: string[],
-  href: Url
+  href: string
 }
 
 export type Certificate = {
@@ -22,4 +20,10 @@ export type Certificate = {
   summary: string,
   thumbnailPath: string,
   imgPaths?: string[],
+}
+
+export type Quote = {
+  id: number,
+  author: string,
+  message: string
 }

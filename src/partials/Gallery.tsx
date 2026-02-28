@@ -1,139 +1,91 @@
 'use client'
-
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-
 export default function Gallery({ images }: { images: string[] }) {
   const [isOpen, setIsOpen] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [thumbnailLoading, setThumbnailLoading] = useState(true)
-
+  const [thumbnailLoaded, setThumbnailLoaded] = useState(false)
+  const [modalImageLoaded, setModalImageLoaded] = useState(false)
   const hasGallery = Array.isArray(images) && images.length > 0
   const currentImg = hasGallery ? images[currentIndex] : null
-
   function openGallery(index = 0) {
     if (!hasGallery) return
     setCurrentIndex(index)
+    setModalImageLoaded(false)
     setIsOpen(true)
   }
-
   function closeGallery() {
     setIsOpen(false)
   }
-
-  function prevImage() {
+  const prevImage = useCallback(() => {
     if (!hasGallery) return
+    setModalImageLoaded(false)
     setCurrentIndex(prev => (prev - 1 + images.length) % images.length)
-  }
-
-  function nextImage() {
+  }, [hasGallery, images.length])
+  const nextImage = useCallback(() => {
     if (!hasGallery) return
+    setModalImageLoaded(false)
     setCurrentIndex(prev => (prev + 1) % images.length)
-  }
-
-  function handleThumbnailLoad() {
-    setThumbnailLoading(false)
-  }
-
-  // Add keyboard navigation
-  function handleKeyDown(e: KeyboardEvent) {
+  }, [hasGallery, images.length])
+  useEffect(() => {
     if (!isOpen) return
-    if (e.key === 'Escape') closeGallery()
-    if (e.key === 'ArrowLeft') prevImage()
-    if (e.key === 'ArrowRight') nextImage()
-  }
-
-  // Add keyboard listener
-  if (typeof window !== 'undefined') {
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown)
-    } else {
-      window.removeEventListener('keydown', handleKeyDown)
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') closeGallery()
+      if (e.key === 'ArrowLeft') prevImage()
+      if (e.key === 'ArrowRight') nextImage()
     }
-  }
-
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, prevImage, nextImage])
   return (
     <>
       {hasGallery && (
-        <button onClick={() => openGallery(0)} className="w-full relative">
-          {thumbnailLoading && (
-            <div className="absolute inset-0 w-full h-[224px] md:h-[300px] rounded-md bg-secondary/50 animate-pulse"></div>
+        <div onClick={() => openGallery(0)} className="w-full relative cursor-pointer aspect-video">
+          {/* Thumbnail loading placeholder */}
+          {!thumbnailLoaded && (
+            <div className="w-full h-full absolute inset-0 bg-gray-200 animate-pulse rounded" />
           )}
           <Image
             src={images[0]}
-            alt="thumbnail"
-            className={`w-full rounded-md h-auto max-h-128 object-contain cursor-pointer transition-opacity duration-300 ${
-              thumbnailLoading ? 'opacity-0' : 'opacity-100'
-            }`}
-            width={600}
-            height={600}
-            quality={75}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-            onLoad={handleThumbnailLoad}
+            alt="Gallery thumbnail"
+            sizes="100vw"
+            fill
+            className={`object-cover transition-opacity duration-300 ${thumbnailLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setThumbnailLoaded(true)}
           />
-        </button>
+        </div>
       )}
-
       {isOpen && (
-        <figure 
-          className="fixed inset-0 bg-[rgba(0,0,0,0.85)] flex items-center justify-center z-50 p-4"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) closeGallery()
-          }}
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+          onClick={e => { if (e.target === e.currentTarget) closeGallery() }}
         >
-          <button
-            onClick={closeGallery}
-            className="absolute top-4 right-6 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors"
-            aria-label="Close gallery"
-          >
-            &times;
-          </button>
-
-          <span className="absolute top-24 left-auto right-auto md:hidden text-white text-sm text-center">
+          <button onClick={closeGallery} className="absolute top-4 right-4 text-white text-2xl">×</button>
+          <p className="absolute top-4 left-1/2 -translate-x-1/2 text-white text-sm md:hidden">
             Rotate phone for better viewing experience
-          </span>
-
-          <div className="relative w-full max-w-5xl">
+          </p>
+          {/* Modal image with loading placeholder */}
+          <div className="relative w-full max-w-3xl aspect-video mx-4">
+            {!modalImageLoaded && (
+              <div className="absolute inset-0 bg-gray-700 animate-pulse rounded" />
+            )}
             {currentImg && (
               <Image
                 src={currentImg}
-                alt={`Gallery image ${currentIndex + 1} of ${images.length}`}
-                className="w-full max-w-5xl h-auto max-h-[80vh] object-contain rounded-md shadow-lg mx-auto"
-                width={1920}
-                height={1920}
-                quality={90}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1920px"
-                priority
+                alt={`Image ${currentIndex + 1}`}
+                sizes="100vw"
+                fill
+                className={`object-contain transition-opacity duration-300 ${modalImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={() => setModalImageLoaded(true)}
               />
             )}
           </div>
-
-          <button
-            onClick={prevImage}
-            disabled={!hasGallery}
-            className={`absolute left-4 sm:left-8 text-white text-6xl font-bold select-none cursor-pointer p-4 hover:bg-white/10 rounded transition-colors ${
-              !hasGallery ? 'opacity-40 cursor-not-allowed' : ''
-            }`}
-            aria-label="Previous image"
-          >
-            &lsaquo;
-          </button>
-
-          <button
-            onClick={nextImage}
-            disabled={!hasGallery}
-            className={`absolute right-4 sm:right-8 text-white text-6xl font-bold select-none cursor-pointer p-4 hover:bg-white/10 rounded transition-colors ${
-              !hasGallery ? 'opacity-40 cursor-not-allowed' : ''
-            }`}
-            aria-label="Next image"
-          >
-            &rsaquo;
-          </button>
-
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 px-3 py-1 rounded">
+          <button onClick={prevImage} className="absolute left-4 text-white text-4xl">‹</button>
+          <button onClick={nextImage} className="absolute right-4 text-white text-4xl">›</button>
+          <div className="absolute bottom-4 text-white text-sm">
             {currentIndex + 1} / {images.length}
           </div>
-        </figure>
+        </div>
       )}
     </>
   )
