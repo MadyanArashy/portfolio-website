@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -68,6 +69,7 @@ export default function RootLayout({
         className={`${inter.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-primary text-text-primary`}
       >
         <Navbar />
+        <Analytics />
         {children}
       </body>
     </html>
